@@ -1,0 +1,460 @@
+{
+	"info": {
+		"_postman_id": "8f5f4060-43e9-43f2-8927-4ef059a292f1",
+		"name": "SeguradoraCarroSeguro",
+		"description": "Serviços SeguradoraCarroSeguro",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Clientes",
+			"item": [
+				{
+					"name": "Criar Cliente",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"André\",\r\n    \"cpf\": \"41996998803\",\r\n    \"cidade\": \"Curitiba\",\r\n    \"uf\": \"PR\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/clientes/cliente/criar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"clientes",
+								"cliente",
+								"criar"
+							]
+						},
+						"description": "Utilizado para criar novos usuários. Atenção: Todos os campos são obrigatórios."
+					},
+					"response": []
+				},
+				{
+					"name": "ObterTodos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/clientes/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"clientes",
+								""
+							]
+						},
+						"description": "Recupera todos os clientes criados"
+					},
+					"response": []
+				},
+				{
+					"name": "Cliente Por Id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/clientes/cliente?id=6041e7d577a00b0459d34126",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"clientes",
+								"cliente"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "6041e7d577a00b0459d34126"
+								}
+							]
+						},
+						"description": "Recupera o cliente através do seu ID"
+					},
+					"response": []
+				},
+				{
+					"name": "Cliente Por Nome",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/clientes/cliente/?nome=André",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"clientes",
+								"cliente",
+								""
+							],
+							"query": [
+								{
+									"key": "nome",
+									"value": "André"
+								}
+							]
+						},
+						"description": "Recupera o cliente através do seu Nome"
+					},
+					"response": []
+				},
+				{
+					"name": "Cliente Por Cpf",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/clientes/cliente/?cpf=34242738803",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"clientes",
+								"cliente",
+								""
+							],
+							"query": [
+								{
+									"key": "cpf",
+									"value": "34242738803"
+								}
+							]
+						},
+						"description": "Recupera o cliente através do seu CPF"
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar Cliente",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"André\",\r\n    \"cpf\": \"41996998803\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/clientes/cliente/atualizar?id=6041e7d577a00b0459d34126",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"clientes",
+								"cliente",
+								"atualizar"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "6041e7d577a00b0459d34126"
+								}
+							]
+						},
+						"description": "Utilizado para atualizar usuários.\nObs.: Caso o usuário não exista, é criado um novo usuário."
+					},
+					"response": []
+				},
+				{
+					"name": "Remover Cliente",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/clientes/cliente/remover?id=6041bf185143ff5fb928a5f2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"clientes",
+								"cliente",
+								"remover"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "6041bf185143ff5fb928a5f2"
+								}
+							]
+						},
+						"description": "Remove um usuário utilizando seu ID como parametro."
+					},
+					"response": []
+				}
+			],
+			"description": "CRUD Clientes"
+		},
+		{
+			"name": "Apolices",
+			"item": [
+				{
+					"name": "Criar Apolice",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"vigencia\": {\r\n        \"inicio\": \"2020-01-05T00:00:00\",\r\n        \"fim\": \"2022-10-05T00:00:00\"\r\n    },\r\n    \"placaVeiculo\": \"XPT-9981\",\r\n    \"valor\": \"5000.00\",\r\n    \"cliente\":{\r\n        \"id\": \"6041e7d577a00b0459d34126\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/apolices/apolice/criar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"apolices",
+								"apolice",
+								"criar"
+							]
+						},
+						"description": "Utilizado para criar novas apolices.\nAtenção: Todos os campos são obrigatórios e é necessário associar a apólice a um cliente."
+					},
+					"response": []
+				},
+				{
+					"name": "ObterTodas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/apolices/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"apolices",
+								""
+							]
+						},
+						"description": "Recupera todos as apolices criadas."
+					},
+					"response": []
+				},
+				{
+					"name": "Apolice por Numero",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/apolices/apolice?numero=1593022357",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"apolices",
+								"apolice"
+							],
+							"query": [
+								{
+									"key": "numero",
+									"value": "1593022357"
+								}
+							]
+						},
+						"description": "Recupera apolice pelo numero da apolice.\n\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Apolice por PlacaVeiculo",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/apolices/apolice?placaVeiculo=BCD-5581",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"apolices",
+								"apolice"
+							],
+							"query": [
+								{
+									"key": "placaVeiculo",
+									"value": "BCD-5581"
+								}
+							]
+						},
+						"description": "Recupera apolice pela placa do veículo."
+					},
+					"response": []
+				},
+				{
+					"name": "Apolice por Cliente",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/apolices/apolice?clienteId=6041e7d577a00b0459d34126",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"apolices",
+								"apolice"
+							],
+							"query": [
+								{
+									"key": "clienteId",
+									"value": "6041e7d577a00b0459d34126"
+								}
+							]
+						},
+						"description": "Recupera a apolice pelo Cliente."
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar Apolice",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"vigencia\": {\r\n        \"fim\": \"2023-09-20T00:00:00\"\r\n    },\r\n    \"cliente\": {\r\n        \"id\": \"6041e7d577a00b0459d34126\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/apolices/apolice/atualizar?id=1531476420",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"apolices",
+								"apolice",
+								"atualizar"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1531476420"
+								}
+							]
+						},
+						"description": "Utilizado para atualizar as apolices. Obs.: Caso a apolice não exista, é criado uma nova apolice.\n\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Remover Apolice",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/apolices/apolice/remover?id=1531476420",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"apolices",
+								"apolice",
+								"remover"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1531476420"
+								}
+							]
+						},
+						"description": "Remove uma apolice utilizando como parametro o numero da apolice."
+					},
+					"response": []
+				}
+			],
+			"description": "CRUD Apolices"
+		},
+		{
+			"name": "Consulta Apolices",
+			"item": [
+				{
+					"name": "Apolice Completa",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/consultaapolices/apolicecompleta?numero=1766352258",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"consultaapolices",
+								"apolicecompleta"
+							],
+							"query": [
+								{
+									"key": "numero",
+									"value": "1766352258"
+								}
+							]
+						},
+						"description": "Consulta completa de uma apolice utilizando como parametro o numero da apolice."
+					},
+					"response": []
+				}
+			],
+			"description": "Consulta Completa das Apolices. Trazendo informações sobre a situação da apolice (vencida ou não), dias para vencer (caso não vencida) e dias após vencimento (caso vencida)."
+		}
+	]
+}
