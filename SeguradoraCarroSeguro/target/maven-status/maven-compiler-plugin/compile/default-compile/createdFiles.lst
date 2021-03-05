@@ -1,0 +1,15 @@
+br\com\seguradoracarroseguro\model\Apolice.class
+br\com\seguradoracarroseguro\util\ValidaCpf.class
+br\com\seguradoracarroseguro\controller\ClienteController.class
+br\com\seguradoracarroseguro\model\Vigencia.class
+br\com\seguradoracarroseguro\repository\ClienteRepository.class
+br\com\seguradoracarroseguro\controller\ConsultaApoliceController.class
+br\com\seguradoracarroseguro\controller\ApoliceController.class
+br\com\seguradoracarroseguro\service\ApoliceService.class
+br\com\seguradoracarroseguro\service\impl\ClienteServiceImpl.class
+br\com\seguradoracarroseguro\model\ApoliceCompleta.class
+br\com\seguradoracarroseguro\SeguradoraCarroSeguroApplication.class
+br\com\seguradoracarroseguro\service\ClienteService.class
+br\com\seguradoracarroseguro\model\Cliente.class
+br\com\seguradoracarroseguro\repository\ApoliceRepository.class
+br\com\seguradoracarroseguro\service\impl\ApoliceServiceImpl.class
