@@ -5,4 +5,10 @@ Também foi incluído uma consulta de apolice separada dos CRUDs, onde constam a
 Ex.: se ela já está vencida ou não, a quantos dias está vencida (caso esteja) ou quantos dias falta para vencer (caso não esteja).
 
 Foi documentado os endpoints utilizando o postman.
-O collection do postmane está ./postmanCollection
+O collection do postmane está ./postmanCollection/SeguradoraCarroSeguro.postman_collection.json
+
+O jar para execução está em ./SeguradoraCarroSeguro/target/SeguradoraCarroSeguro-0.0.1-SNAPSHOT.jar
+
+Para implementação utilizei o MongoDB Atlas.
+DatabaseName: scsdb
+Collections: apolice, cliente
