@@ -1,0 +1,1 @@
+java -jar -Xmx512m -Xms256m SeguradoraCarroSeguro-0.0.1-SNAPSHOT.jar
