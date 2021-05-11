@@ -1,6 +1,6 @@
 # SeguradoraCarroSeguro
 
-Projeto com CRUD para cadastro de clientes e apolices utilizando Java 8, Spring boot e MongoDB.
+Projeto CRUD para cadastro de clientes e apolices utilizando Java 8, Spring boot e MongoDB.
 Também foi incluído uma consulta de apolice separada dos CRUDs, onde constam algumas informações mais detalhadas referente a apolice.
 Ex.: se ela já está vencida ou não, a quantos dias está vencida (caso esteja) ou quantos dias falta para vencer (caso não esteja).
 
